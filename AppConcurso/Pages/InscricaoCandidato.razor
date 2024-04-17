@@ -17,7 +17,7 @@
         <div class="col">
             <label for="veiculo" class="form-label">CARGOS:</label>
             <select @onchange="SelecionarCargos" class="form-select" aria-label="Selecione um Cargo">
-                <option selected>Selecione uma placa</option>
+                <option selected>Selecione o cargo</option>
                 @foreach (var item in listaCargos)
                 {
                     <option value=@item.Id>@item.NomeCargo</option>
@@ -97,7 +97,7 @@
     {
         var listaCarg = await cargoControl.ListaCargos();
         var listaCand = await candControl.ListaCandidatos();
-        var listaInsc = await inscControl.ListaIncricoes();
+        var listaInsc = await inscControl.ListaInscricoes();
 
 
         listaCargos = listaCarg;
@@ -109,7 +109,7 @@
     {
         Inscricao inscricao = new Inscricao();
         inscricao.DataInscricao = DateTime.Today;
-        inscricao.NumeroInsc = numeroInsc;
+        inscricao.NumeroInsc = numeroInsc.ToString();
         inscricao.Cargo = cargo;
         inscricao.Candidato = candidato;
 
@@ -132,7 +132,7 @@
     public void SelecionarCargos(ChangeEventArgs e)
     {
         int id = Convert.ToInt32(e.Value.ToString());
-        cargo = listaCargos.Where(p => p.Id == id)FirstOrDefault();
+        cargo = listaCargos.Where(p => p.Id == id).FirstOrDefault();
     }
 
     public void NovaInscricao()

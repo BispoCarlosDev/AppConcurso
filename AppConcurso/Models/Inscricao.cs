@@ -20,16 +20,16 @@ namespace AppConcurso.Models
         [Column("nota_conh_especificos")]
         public decimal NotaConhEspecificos { get; set; }
 
-        [Column("id_candidato")]
-        public int? IdCandidato { get; set; }
+        [Column("candidato_id")]
+        public int? CandidatoID { get; set; }
 
-        [ForeignKey("IdCandidato")]
+        [ForeignKey("CandidatoID")]
         public Candidato? Candidato { get; set; }
 
-        [Column("id_cargo")]
-        public int? IdCargo { get; set; }
+        [Column("cargo_id")]
+        public int? CargoID { get; set; }
 
-        [ForeignKey("IdCargo")]
+        [ForeignKey("CargoID")]
         public Cargo? Cargo { get; set; }
 
         public List<Inscricao>? Inscricoes { get; set; }

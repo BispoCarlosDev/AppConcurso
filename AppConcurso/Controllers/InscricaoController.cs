@@ -25,6 +25,11 @@ namespace AppConcurso.Controllers
             await _context.Inscricoes.AddAsync(inscricao);
         }
 
+        public async Task UpdateRange(List<Inscricao> inscricoes)
+        {
+            _context.Inscricoes.UpdateRange(inscricoes);
+        }
+
         public async Task Salvar()
         {
             await _context.SaveChangesAsync();

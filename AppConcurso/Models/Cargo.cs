@@ -15,7 +15,9 @@ namespace AppConcurso.Models
         public string? Edital { get; set;}
 
         [Column("salario_base")]
-        public decimal SalarioBase { get; set; }
+        public decimal? SalarioBase { get; set; }
+
+        public List<Inscricao>? Inscricoes { get; set; }
 
     }
 }

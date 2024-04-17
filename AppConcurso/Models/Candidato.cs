@@ -17,5 +17,7 @@ namespace AppConcurso.Models
         [Column("data_nascimento")]
         public DateTime? DataNasc { get; set; }
 
+        public List<Inscricao>? Inscricoes { get; set; }
+
     }
 }
