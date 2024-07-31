@@ -19,7 +19,7 @@ namespace AppConcurso.Controllers
             var cargo = await _context.Cargos.Include(x => x.Inscricoes).ToListAsync();
             return cargo;
         }
-
+        
         public async Task<List<Cargo>> ListaCargosIncludeCandidato()
         {
             var cargo = await _context.Cargos.Include(c => c.Inscricoes).ThenInclude(i => i.Candidato).ToListAsync();

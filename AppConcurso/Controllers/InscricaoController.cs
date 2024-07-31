@@ -16,7 +16,7 @@ namespace AppConcurso.Controllers
 
         public async Task<List<Inscricao>> ListaInscricoes()
         {
-            var inscricoes = await _context.Inscricoes.Include(x => x.Cargo).Include(x => x.Candidato).ToListAsync();
+            var inscricoes = await _context.Inscricoes.Include(x => x.Cargo).Include(x=>x.Candidato).ToListAsync();
             return inscricoes;
         }
 
@@ -24,7 +24,7 @@ namespace AppConcurso.Controllers
         {
             await _context.Inscricoes.AddAsync(inscricao);
         }
-
+        
         public async Task UpdateRange(List<Inscricao> inscricoes)
         {
             _context.Inscricoes.UpdateRange(inscricoes);
